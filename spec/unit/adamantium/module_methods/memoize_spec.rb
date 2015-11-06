@@ -12,11 +12,6 @@ shared_examples_for 'memoizes method' do
 end
 
 shared_examples_for 'wraps original method' do
-  it 'creates a method with an arity of 0' do
-    subject
-    expect(object.new.method(method).arity).to be_zero
-  end
-
   context 'when the initializer calls the memoized method' do
     it_should_behave_like 'memoizes method'
 
@@ -55,7 +50,7 @@ describe Adamantium::ModuleMethods, '#memoize' do
 
   context 'with :noop freezer option' do
     let(:method)  { :some_state        }
-    let(:options) { { freezer: :noop } }
+    let(:options) { { :freezer => :noop } }
 
     it_should_behave_like 'a command method'
     it_should_behave_like 'wraps original method'

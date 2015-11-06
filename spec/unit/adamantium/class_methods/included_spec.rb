@@ -37,8 +37,8 @@ describe Adamantium, '.included' do
 
     it 'extends the descendant with Adamantium::ModuleMethods' do
       subject
-      expect(descendant.singleton_class.included_modules)
-        .to include(Adamantium::ModuleMethods)
+      expect(descendant.singleton_class.included_modules).
+        to include(Adamantium::ModuleMethods)
     end
   end
 
@@ -49,8 +49,8 @@ describe Adamantium, '.included' do
 
     it 'extends a class descendant with Adamantium::ClassMethods' do
       subject
-      expect(descendant.singleton_class.included_modules)
-        .to include(Adamantium::ClassMethods)
+      expect(descendant.singleton_class.included_modules).
+        to include(Adamantium::ClassMethods)
     end
   end
 
@@ -61,8 +61,8 @@ describe Adamantium, '.included' do
 
     it 'does not extends a module descendant with Adamantium::ClassMethods' do
       subject
-      expect(descendant.singleton_class.included_modules)
-        .to_not include(Adamantium::ClassMethods)
+      expect(descendant.singleton_class.included_modules).
+        to_not include(Adamantium::ClassMethods)
     end
   end
 end

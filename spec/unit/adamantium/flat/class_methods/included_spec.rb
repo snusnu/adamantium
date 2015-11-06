@@ -37,7 +37,7 @@ describe Adamantium::Flat, '.included' do
 
   it 'extends the descendant with Adamantium::Flat' do
     subject
-    expect(descendant.singleton_class.included_modules)
-      .to include(Adamantium::Flat)
+    expect(descendant.singleton_class.included_modules).
+      to include(Adamantium::Flat)
   end
 end

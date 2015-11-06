@@ -11,7 +11,7 @@ describe Adamantium::ModuleMethods, '#included' do
 
   before do
     # Prevent Module.included from being called through inheritance
-    allow(Adamantium).to receive(:included)
+    Adamantium.stub(:included)
   end
 
   around do |example|
